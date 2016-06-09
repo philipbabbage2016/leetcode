@@ -8,10 +8,11 @@ public class Solution {
             else if(!s.startsWith(t))
                 continue;
             else {
-                
-                Set<String> dict2 = new HashSet<String>(wordDict);
-                dict2.remove(t);
-                return  wordBreak(s.substring(t.length()),wordDict) || wordBreak(s,dict2)  ;
+                boolean b1 = wordBreak(s.substring(t.length()),wordDict);
+                if(b1)
+                    return b1;
+                wordDict.remove(t);
+                return  wordBreak(s,wordDict)  ;
             }
             
         }
