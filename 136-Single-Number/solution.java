@@ -4,12 +4,8 @@ public class Solution {
         for(;i<len;i++){
             xorRes ^=nums[i];
         }
-        for(i=0;i<len;i++){
-            t = xorRes^nums[i];
-            if(t==0)
-                return nums[i]; 
-        }
-        return 0;
+
+        return xorRes;
     }
     
 }
