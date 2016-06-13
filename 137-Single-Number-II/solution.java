@@ -1,21 +1,18 @@
 public class Solution {
     public int singleNumber(int[] nums) {
-        Map<Integer,Integer> numMap = new HashMap<Integer,Integer>();
-        int i =0, len = nums.length,tk=0,tv=0;
-        for(;i<len;i++){
-            tk= nums[i];
-           
-            if(!numMap.containsKey(tk)){
-                numMap.put(tk,1);
-            }else{
-                tv = numMap.get(tk);
-                numMap.put(tk,tv+1);
+        int sum =0,pos=0,res=0,len= nums.length;
+        for(int i =0;i<32;i++){
+            pos = 1<<i;
+            sum=0;
+            for(int j =0;j<len;j++){
+                if( (pos & nums[j] ) == pos ){
+                    sum++;
+                }
+            }
+            if((sum%3) ==1){
+                res = (res|pos);
             }
         }
-        for(int k :numMap.keySet()){
-            if(numMap.get(k) ==1)
-            return k;
-        }
-        return -1;
+        return res;
     }
 }
