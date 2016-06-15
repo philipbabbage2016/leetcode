@@ -9,7 +9,7 @@ public class Solution {
             if((n%i) !=0)
                 return false;
             n=n/i;
-            if(n ==3|| n== 1||i=n||i=3*n){
+            if(n ==3|| n== 1 || i==n || i=3*n){
                 return true;
             } 
             i=i*3;
