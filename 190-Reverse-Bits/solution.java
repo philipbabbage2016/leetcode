@@ -1,7 +1,7 @@
 public class Solution {
     // you need treat n as an unsigned value
     public int reverseBits(int n) {
-        int i =0,l,r,l,r;
+        int i =0,l,r;
         while(i<16){
             l = (n>>(31-i))&1;
             r = (n>>i)&1;
