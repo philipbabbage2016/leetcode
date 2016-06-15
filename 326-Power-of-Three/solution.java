@@ -9,13 +9,18 @@ public class Solution {
             if((n%i) !=0)
                 return false;
             n=n/i;
-            if(n ==3|| n== 1 || i==n || i=3*n){
+            if(n ==3|| n== 1 ){
                 return true;
             } 
             i=i*3;
-            
         }
         i=3;
+        while(i<Integer.MAX_VALUE&&i<=n){
+            if(n == i)
+                return true;
+            i=i*3;
+        }
+        
         return false;
     }
 }
