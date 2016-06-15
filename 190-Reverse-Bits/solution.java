@@ -1,19 +1,16 @@
 public class Solution {
     // you need treat n as an unsigned value
     public int reverseBits(int n) {
-        int i =0,l,r,lo,ro;
+        int i =0,l,r,l,r;
         while(i<16){
-            l = n&(1<<(31-i));
-            r = n&(1<<i);
-            lo = l>>(31-i);
-            ro = r>>i;
-            if(lo == ro);
-            else if(lo ==1){
-                return l;
-                n =  n - l;
+            l = (n>>(31-i))&1;
+            r = (n>>i)&1;
+            if(l == r);
+            else if(l == 1){
+                n =  n - (1<<(31-i));
                 n =  n + (1<<i);
             }else{
-                n = n - r;
+                n = n - (1<<i);
                 n = n + (1<<(31-i));
             }
             i++;
