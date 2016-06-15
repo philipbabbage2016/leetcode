@@ -17,9 +17,8 @@ public class Solution {
                 n = n + (1<<(31-i));
             }
             i++;
-            return n;
         }
-        
+        return n;
         
     }
 
