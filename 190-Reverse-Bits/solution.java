@@ -7,9 +7,9 @@ public class Solution {
             r = n&(1<<i);
             lo = l>>(31-i);
             ro = r>>i;
-            if(lo == ro)
-                continue;
-            if(lo ==1){
+            if(lo == ro);
+            else if(lo ==1){
+                return l;
                 n =  n - l;
                 n =  n + (1<<i);
             }else{
