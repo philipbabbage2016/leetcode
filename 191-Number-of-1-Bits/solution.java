@@ -6,7 +6,7 @@ public class Solution {
             t = 1<<i;
             if((n&(t)) == t)
                 cnt++;
-            i++
+            i++;
         }
         return cnt;
     }
